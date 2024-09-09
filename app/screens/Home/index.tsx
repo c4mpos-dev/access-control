@@ -5,7 +5,11 @@ import { styles } from './styles';
 export default function Home() {
 
   function handleParticipantAdd() {
-    console.log("Botão de adicionar clicado.")
+    console.log("Botão de adicionar clicado.");
+  }
+
+  function handleParticipantRemove(name: string) {
+    console.log(`Botão de remover clicado ${name}.`);
   }
 
   return (
@@ -32,10 +36,10 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
-      <Participant name="Cauã Campos"/>
-      <Participant name="Davi Garutti"/>
-      <Participant name="Iago (de Andrade Oliveira / de Oliveira Andrade)"/>
-      <Participant name="Dom Peso I"/>
+      <Participant name="Cauã Campos"  onRemove={() => handleParticipantRemove("Iago")}/>
+      <Participant name="Davi Garutti"  onRemove={() => handleParticipantRemove("Iago")}/>
+      <Participant name="Iago (de Andrade Oliveira / de Oliveira Andrade)" onRemove={() => handleParticipantRemove("Iago")}/>
+      <Participant name="Dom Peso I" onRemove={() => handleParticipantRemove("Iago")}/>
     </View>
   );
 }
