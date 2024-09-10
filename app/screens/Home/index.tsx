@@ -4,14 +4,19 @@ import { Participant } from '@/app/components/Participant';
 import { styles } from './styles';
 
 export default function Home() {
-  const [participants, setParticipants] = useState(["Cauã Campos"]);
+  const [participants, setParticipants] = useState<string[]>([]);
+  const [participantName, setParticipantName] = useState('');
 
   function handleParticipantAdd() {
-    if (participants.includes("Joao")) {
+    if (participants.includes(participantName)) {
       return Alert.alert("Participante existente.", "Esse nome já está cadastrada na lista.")
     }
+    else if (participantName == ''){
+      return Alert.alert("Nome vazio.", "Digite um nome para o participante, não é possível adicionar um nome vazio.")
+    }
     
-    setParticipants(prevState => [...prevState, "Ana"])
+    setParticipants(prevState => [...prevState, participantName])
+    setParticipantName('');
   }
 
   function handleParticipantRemove(name: string) {
@@ -45,6 +50,8 @@ export default function Home() {
           style={styles.input}
           placeholder="Nome do participante"
           placeholderTextColor="#6B6B6B"
+          onChangeText={setParticipantName}
+          value={participantName}
         />
 
         <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
