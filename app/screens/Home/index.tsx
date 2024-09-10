@@ -1,16 +1,32 @@
-import { Text, View, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { Participant } from '@/app/components/Participant';
 import { styles } from './styles';
 
 export default function Home() {
-  const participants = ["Cauã Campos", "Gavi Darutti", "Iago (de Andrade Oliveira / de Oliveira Andrade)", "Pom Deso I", "Rabriel Gosa", "Vabriel Gilela", "Lna Auísa", "Cna Alara", "Mebeca Rota", "A", "B", "C", "D", "F", "G", "H"];
-
+  const [participants, setParticipants] = useState(["Cauã Campos"]);
 
   function handleParticipantAdd() {
-    console.log("Botão de adicionar clicado.");
+    if (participants.includes("Joao")) {
+      return Alert.alert("Participante existente.", "Esse nome já está cadastrada na lista.")
+    }
+    
+    setParticipants(prevState => [...prevState, "Ana"])
   }
 
   function handleParticipantRemove(name: string) {
+    Alert.alert("Remover participante.", `Realmente deseja remover o participante ${name}?`, [
+      {
+        text: "Não",
+        style: "cancel"
+      },
+      {
+        text: "Sim",
+        onPress: () => Alert.alert("Participante deletado!")
+
+      }
+    ])
+
     console.log(`Botão de remover clicado ${name}.`);
   }
 
