@@ -7,31 +7,44 @@ import { styles } from './styles';
 export default function Home() {
   const [participants, setParticipants] = useState<string[]>([]);
   const [participantName, setParticipantName] = useState('');
+  const [eventName, setEventName] = useState('');
+  const [eventDate, setEventDate] = useState('');
 
   useEffect(() => {
-    loadParticipants();
+    loadEventDetails();
   }, []);
 
   useEffect(() => {
-    saveParticipants();
-  }, [participants]);
+    saveEventDetails();
+  }, [participants, eventName, eventDate]);
 
-  async function loadParticipants() {
+  async function loadEventDetails() {
     try {
       const storedParticipants = await AsyncStorage.getItem('participants');
+      const storedEventName = await AsyncStorage.getItem('eventName');
+      const storedEventDate = await AsyncStorage.getItem('eventDate');
+      
       if (storedParticipants) {
         setParticipants(JSON.parse(storedParticipants));
       }
+      if (storedEventName) {
+        setEventName(storedEventName);
+      }
+      if (storedEventDate) {
+        setEventDate(storedEventDate);
+      }
     } catch (error) {
-      Alert.alert("Erro", "Não foi possível carregar os participantes.");
+      Alert.alert("Erro", "Não foi possível carregar os detalhes do evento.");
     }
   }
 
-  async function saveParticipants() {
+  async function saveEventDetails() {
     try {
       await AsyncStorage.setItem('participants', JSON.stringify(participants));
+      await AsyncStorage.setItem('eventName', eventName);
+      await AsyncStorage.setItem('eventDate', eventDate);
     } catch (error) {
-      Alert.alert("Erro", "Não foi possível salvar os participantes.");
+      Alert.alert("Erro", "Não foi possível salvar os detalhes do evento.");
     }
   }
 
@@ -62,13 +75,19 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.eventName}>
-        Campos's party
-      </Text>
+      <TextInput style={styles.eventName}
+        placeholder='Nome do evento'
+        placeholderTextColor="#6B6B6B"
+        onChangeText={setEventName}
+        value={eventName}
+      />
 
-      <Text style={styles.eventDate}>
-        Sexta-feira, 6 de Setembro de 2024.
-      </Text>
+      <TextInput style={styles.eventDate}
+        placeholder='Data do evento'
+        placeholderTextColor="#6B6B6B"
+        onChangeText={setEventDate}
+        value={eventDate}
+      />
 
       <View style={styles.form}>
         <TextInput 
