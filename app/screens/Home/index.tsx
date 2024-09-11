@@ -1,11 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { Participant } from '@/app/components/Participant';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { styles } from './styles';
 
 export default function Home() {
   const [participants, setParticipants] = useState<string[]>([]);
   const [participantName, setParticipantName] = useState('');
+
+  useEffect(() => {
+    loadParticipants();
+  }, []);
+
+  useEffect(() => {
+    saveParticipants();
+  }, [participants]);
+
+  async function loadParticipants() {
+    try {
+      const storedParticipants = await AsyncStorage.getItem('participants');
+      if (storedParticipants) {
+        setParticipants(JSON.parse(storedParticipants));
+      }
+    } catch (error) {
+      Alert.alert("Erro", "Não foi possível carregar os participantes.");
+    }
+  }
+
+  async function saveParticipants() {
+    try {
+      await AsyncStorage.setItem('participants', JSON.stringify(participants));
+    } catch (error) {
+      Alert.alert("Erro", "Não foi possível salvar os participantes.");
+    }
+  }
 
   function handleParticipantAdd() {
     if (participants.includes(participantName)) {
