@@ -9,10 +9,10 @@ export default function Home() {
 
   function handleParticipantAdd() {
     if (participants.includes(participantName)) {
-      return Alert.alert("Participante existente.", "Esse nome já está cadastrada na lista.")
+      return Alert.alert("Participante existente", "Esse nome já está cadastrada na lista.")
     }
     else if (participantName == ''){
-      return Alert.alert("Nome vazio.", "Digite um nome para o participante, não é possível adicionar um nome vazio.")
+      return Alert.alert("Nome vazio", "Digite um nome para o participante, não é possível adicionar um nome vazio.")
     }
     
     setParticipants(prevState => [...prevState, participantName])
@@ -20,19 +20,16 @@ export default function Home() {
   }
 
   function handleParticipantRemove(name: string) {
-    Alert.alert("Remover participante.", `Realmente deseja remover o participante ${name}?`, [
+    Alert.alert("Remover participante", `Realmente deseja remover o(a) participante ${name}?`, [
       {
         text: "Não",
         style: "cancel"
       },
       {
         text: "Sim",
-        onPress: () => Alert.alert("Participante deletado!")
-
+        onPress: () => setParticipants(prevState => prevState.filter(participant => participant != name))
       }
     ])
-
-    console.log(`Botão de remover clicado ${name}.`);
   }
 
   return (
