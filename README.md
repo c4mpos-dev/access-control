@@ -1,6 +1,6 @@
 # 🔒Access Control
 
-Access Control é um aplicativo móvel desenvolvido em React Native com Expo, projetado para gerenciar a presença de pessoas em eventos. Com este aplicativo, você pode facilmente adicionar ou remover participantes de uma lista, bem como personalizar o nome do evento e a data.
+Access Control é um aplicativo móvel desenvolvido em React Native com Expo, projetado para gerenciar a presença de pessoas em eventos. Com este aplicativo, você pode facilmente adicionar ou remover participantes de uma lista, bem como personalizar o nome do evento e a data. Esse projeto faz parte da formação de React Native na RocketSeat.
 
 ## 📔Funcionalidades
 
