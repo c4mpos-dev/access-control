@@ -70,11 +70,11 @@ Após iniciar o aplicativo, você verá a tela principal onde pode:
 
 ## 📸Prévia
 
-<div style="display: flex; justify-content: center;">
-  <div style="margin: 0 10px;">
-    <img src="assets/images/List.png" alt="List" width="300" height="700"/>
-  </div>
-  <div style="margin: 0 10px;">
-    <img src="assets/images/EmptyList.png" alt="EmptyList" width="300" height="700"/>
-  </div>
-</div>
+<table>
+   <tr>
+      <center>
+         <td><img src="assets/images/List.png" alt="List" width="300" height="700"/></td>
+         <td><img src="assets/images/EmptyList.png" alt="EmptyList" width="300" height="700"/></td>
+      </center>
+   </tr>
+</table>
