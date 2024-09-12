@@ -1,50 +1,74 @@
-# Welcome to your Expo app 👋
+# 🔒Access Control
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Access Control é um aplicativo móvel desenvolvido em React Native com Expo, projetado para gerenciar a presença de pessoas em eventos. Com este aplicativo, você pode facilmente adicionar ou remover participantes de uma lista, bem como personalizar o nome do evento e a data.
 
-## Get started
+## 📔Funcionalidades
 
-1. Install dependencies
+- Adicionar novos participantes à lista.
+- Remover participantes da lista.
+- Personalizar o nome do evento.
+- Definir a data do evento.
 
-   ```bash
-   npm install
-   ```
+## 💻Tecnologias Utilizadas
 
-2. Start the app
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
 
-   ```bash
-    npx expo start
-   ```
+## ✨Pré-requisitos
 
-In the output, you'll find options to open the app in a
+Antes de começar, certifique-se de ter instalado as seguintes ferramentas:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [Node.js](https://nodejs.org/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## ❓Como executar o projeto
 
-## Get a fresh project
+Siga os passos abaixo para rodar o projeto localmente:
 
-When you're ready, run:
+1. **Clone este repositório**
 
 ```bash
-npm run reset-project
+git clone https://github.com/c4mpos-dev/access-control.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. **Navegue até o diretório do projeto**
 
-## Learn more
+```bash
+cd access-control
+```
+Use este comando para mudar para o diretório do projeto que você acabou de clonar.
 
-To learn more about developing your project with Expo, look at the following resources:
+3. **Instale as dependências**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
 
-## Join the community
+4. **Inicie o servidor de desenvolvimento do Expo**
 
-Join our community of developers creating universal apps.
+```bash
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. **Execute o aplicativo**
+
+Use um dispositivo físico com o aplicativo Expo Go instalado ou um emulador Android/iOS configurado para rodar o projeto.
+
+## 🏛️Estrutura do Projeto
+
+- **src/**: Contém o código-fonte do aplicativo.
+- **assets/**: Imagens e outros recursos estáticos.
+- **App.tsx**: Ponto de entrada principal do aplicativo.
+
+## 📝Exemplo de Uso
+
+Após iniciar o aplicativo, você verá a tela principal onde pode:
+
+1. **Adicionar um participante**: Digite o nome do participante e clique em "Adicionar" para incluí-lo na lista.
+2. **Remover um participante**: Clique no botão de remoção ao lado do nome do participante que deseja excluir da lista.
+3. **Editar informações do evento**: Insira o nome do evento e a data no topo da tela para personalizar o controle de presença.
+
+## 📸Prévia
+
+![List](assets/images/List.png)
+![List](assets/images/EmptyList.png)
