@@ -36,7 +36,7 @@ git clone https://github.com/c4mpos-dev/access-control.git
 ```bash
 cd access-control
 ```
-   1. Use este comando para mudar para o diretório do projeto que você acabou de clonar.
+   `Use este comando para mudar para o diretório do projeto que você acabou de clonar.`
 
 3. **Instale as dependências**
 
@@ -52,7 +52,7 @@ npx expo start
 
 5. **Execute o aplicativo**
 
-   1. Use um dispositivo físico com o aplicativo Expo Go instalado ou um emulador Android/iOS configurado para rodar o projeto.
+   `Use um dispositivo físico com o aplicativo Expo Go instalado ou um emulador Android/iOS configurado para rodar o projeto.`
 
 ## 🏛️Estrutura do Projeto
 
@@ -70,9 +70,11 @@ Após iniciar o aplicativo, você verá a tela principal onde pode:
 
 ## 📸Prévia
 
-<table>
-  <tr>
-    <td><img src="assets/images/List.png" alt="Screenshot 1" width="300" height="700"/></td>
-    <td><img src="assets/images/EmptyList.png" alt="Screenshot 2" width="300" height="700"/></td>
-  </tr>
-</table>
+<div style="display: flex; justify-content: center;">
+  <div style="margin: 0 10px;">
+    <img src="assets/images/List.png" alt="List" width="300" height="700"/>
+  </div>
+  <div style="margin: 0 10px;">
+    <img src="assets/images/EmptyList.png" alt="EmptyList" width="300" height="700"/>
+  </div>
+</div>
