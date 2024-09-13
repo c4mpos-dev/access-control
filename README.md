@@ -56,7 +56,7 @@ npx expo start
 
 ## 🏛️Estrutura do Projeto
 
-- **src/**: Contém o código-fonte do aplicativo.
+- **app/**: Contém o código-fonte do aplicativo.
 - **assets/**: Imagens e outros recursos estáticos.
 - **App.tsx**: Ponto de entrada principal do aplicativo.
 
